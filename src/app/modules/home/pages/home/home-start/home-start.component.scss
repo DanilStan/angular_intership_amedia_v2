@@ -1,0 +1,152 @@
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero__container {
+  display: flex;
+  align-items: center;
+}
+
+.hero__title {
+  min-width: 288px;
+
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.5%;
+
+  @include media-breakpoint-up(xs) {
+    min-width: 384.2px;
+    font-size: 35.2px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    min-width: 480.4px;
+    font-size: 40.4px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    min-width: 576.6px;
+    font-size: 45.6px;
+  }
+
+  @include media-breakpoint-up(md) {
+    min-width: 672.8px;
+    font-size: 50.8px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-width: 769px;
+    font-size: 56px;
+    letter-spacing: 0px;
+  }
+}
+
+.hero__btn {
+  margin-top: 41px;
+  padding: 10px 34px;
+
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 184.615% */
+  letter-spacing: -0.26px;
+  background-color: #000;
+  border-radius: 48px;
+  border: 2px solid #000;
+
+  @include media-breakpoint-up(xs) {
+    margin-top: 42px;
+    padding: 11px 34px;
+    font-size: 16px;
+
+    &--svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 50px;
+    padding: 14px 34px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+
+    &--svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  @include media-breakpoint-up(tb) {
+    margin-top: 46px;
+    padding: 14px 34px;
+    font-size: 16px;
+
+    &--svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    &--svg {
+      width: 13.672px;
+      height: 19px;
+      transition: all 0.2s linear;
+    }
+    transition: all 0.2s linear;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+      scale: 1.05;
+      border-color: #fff;
+      .hero__btn--svg {
+        fill: #000;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 48px;
+    padding: 15px 34px;
+    font-size: 16px;
+
+    &--svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 50px;
+    padding: 14px 34px;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+
+    &--svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &--svg {
+    fill: #fff;
+    margin-right: 11px;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero-container {
+  height: 100vh;
+}

@@ -1,0 +1,29 @@
+<div class="presentation">
+  <div
+    [ngClass]="{
+      hidden: videoVisible,
+      visible: !videoVisible
+    }"
+  >
+    <div class="container">
+      <h2 class="presentation__title">Презентація наживо</h2>
+      <p class="presentation__text">11 березня, о 12:00</p>
+      <button type="button" class="presentation__btn" (click)="toggleVideo()">
+        <svg class="presentation__svg">
+          <use href="../assets/img/icons/sprite.svg#icon-play-btn"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    [ngClass]="{
+      hidden: !videoVisible,
+      visible: videoVisible
+    }"
+  >
+    <video class="presentation__video" controls #videoPlayer (ended)="videoVisible = false">
+      <source src="../assets/img/fullHDnew3.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+</div>

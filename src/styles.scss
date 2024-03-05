@@ -1,3 +1,70 @@
 @import 'src/assets/scss/theme-angular-starter1/fonts';
-
 @import 'src/assets/scss/theme-angular-starter1';
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include media-breakpoint-up(xs) {
+    width: 480px;
+    padding-left: 44.8px;
+    padding-right: 44.8px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: 768px;
+    padding-left: 73.6px;
+    padding-right: 73.6px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    width: 1024px;
+    padding-left: 102.4px;
+    padding-right: 102.4px;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 1280px;
+    padding-left: 131.2px;
+    padding-right: 131.2px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 1440px;
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+.overflow {
+  overflow: hidden;
+}

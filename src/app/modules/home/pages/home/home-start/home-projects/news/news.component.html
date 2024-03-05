@@ -1,0 +1,7 @@
+<li class="news-item">
+  <span class="news-item__number">{{ news.number }}</span>
+  <h3 class="news-item__title">{{ news.title }}</h3>
+  <p class="news-item__text news-item__text--one">{{ news.paragraphOne }}</p>
+  <p class="news-item__text news-item__text--two" *ngIf="news.paragraphTwo">{{ news.paragraphTwo }}</p>
+  <p class="news-item__text news-item__text--three" *ngIf="news.paragraphThree">{{ news.paragraphThree }}</p>
+</li>

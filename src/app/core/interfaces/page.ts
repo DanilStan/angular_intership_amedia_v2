@@ -14,3 +14,12 @@ export interface Page<T> {
   metaData: MetaData
   contentData: T
 }
+
+export interface NewsData {
+  number: string
+  title: string
+  paragraphOne: string
+  paragraphTwo?: string
+  paragraphThree?: string
+  id?: number
+}

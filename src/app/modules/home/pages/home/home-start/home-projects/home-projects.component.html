@@ -1,0 +1,10 @@
+<section class="news">
+  <div class="container">
+    <ul class="news__list">
+      <app-news *ngFor="let news of newsData" [news]="news" class="news__element"></app-news>
+    </ul>
+  </div>
+</section>
+<section>
+  <app-presentation></app-presentation>
+</section>
