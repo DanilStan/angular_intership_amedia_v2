@@ -106,11 +106,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  fill: #fff;
+
+  @include media-breakpoint-up(tb) {
+    &:hover {
+      .presentation__svg {
+        fill: #000;
+      }
+    }
+  }
 }
 
 .presentation__svg {
   width: 48px;
   height: 49.2px;
+  transition: all 0.2s linear;
 
   @include media-breakpoint-up(xs) {
     width: 61.1px;
