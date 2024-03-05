@@ -16,7 +16,7 @@ export class NewsDataService {
       number: '02',
       title: 'Березень — Травень 2020',
       paragraphOne: 'Перехідний період',
-      paragraphTwo: 'Мораторій на інспекційний держконтроль',
+      paragraphTwo: 'Мораторій на інспекційний дерконтроль',
     },
     {
       number: '03',
@@ -27,7 +27,7 @@ export class NewsDataService {
     {
       number: '04',
       title: 'Вересень 2020',
-      paragraphOne: 'Державне агенство з питань технічного регулювання у містобудуванні',
+      paragraphOne: 'Державне агентство з питань технічного регулювання у містобудуванні',
     },
     {
       number: '05',

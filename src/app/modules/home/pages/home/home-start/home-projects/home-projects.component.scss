@@ -21,7 +21,7 @@
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 100px 0;
+    padding: 100px 0 120px 0;
   }
 }
 
@@ -84,6 +84,6 @@
   @include media-breakpoint-up(md) {
     display: flex;
     flex-wrap: wrap;
-    gap: 74px 32px;
+    gap: 52px 32px;
   }
 }
