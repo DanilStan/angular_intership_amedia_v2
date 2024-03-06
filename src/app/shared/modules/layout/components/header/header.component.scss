@@ -11,18 +11,17 @@
 
   display: flex;
   justify-content: space-between;
-  width: 288px;
+  width: 100%;
   align-items: center;
-  padding-top: 25px;
+  padding: 25px 16px 0 16px;
 
   @include media-breakpoint-up(xs) {
-    width: 390.41px;
-    padding-top: 29.4px;
+    padding: 29.4px 44.8px 0 44.8px;
   }
 
   @include media-breakpoint-up(sm) {
+    padding: 33.8px 0 0 0;
     width: 620.81px;
-    padding-top: 33.8px;
   }
 
   @include media-breakpoint-up(tb) {

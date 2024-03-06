@@ -13,7 +13,7 @@ body {
   padding-right: 16px;
 
   @include media-breakpoint-up(xs) {
-    width: 480px;
+    // width: 480px;
     padding-left: 44.8px;
     padding-right: 44.8px;
   }

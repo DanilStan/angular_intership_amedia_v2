@@ -9,8 +9,16 @@
 
 .info__element {
   @include media-breakpoint-up(tb) {
-    margin-left: 161px;
+    margin-left: 121px;
 
+    &--one {
+      margin-left: 0;
+      display: flex;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-left: 161px;
     &--one {
       margin-left: 0;
       display: flex;
@@ -52,7 +60,7 @@
     max-width: 294px;
 
     &:last-child {
-      max-width: 320px;
+      max-width: 294px;
     }
   }
 

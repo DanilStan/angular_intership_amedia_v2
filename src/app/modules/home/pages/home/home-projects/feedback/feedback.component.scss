@@ -1,7 +1,26 @@
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
 .feedback {
-  // display: flex;
+  @include media-breakpoint-up(tb) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
+.feedback__container {
+  @include media-breakpoint-up(tb) {
+    margin-left: 76px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-left: 86px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: 96px;
+  }
+}
 .feedback__title {
   margin-bottom: 14px;
   max-width: 280px;
@@ -10,7 +29,34 @@
   font-style: normal;
   font-weight: 400;
   line-height: 31.18px;
-  letter-spacing: -2%;
+  @include media-breakpoint-up(xs) {
+    margin-bottom: 16px;
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 18px;
+
+    font-size: 38px;
+    line-height: 120%;
+    letter-spacing: -1.12px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    margin-bottom: 20px;
+    font-size: 44px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 22px;
+    font-size: 50px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 24px;
+    font-size: 56px;
+    font-style: normal;
+  }
 }
 
 .feedback__text {
@@ -21,6 +67,34 @@
   font-weight: 400;
   line-height: 21px; /* 21px */
   letter-spacing: -0.28px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 15px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    margin-bottom: 0;
+    letter-spacing: 0;
+    line-height: 27px;
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    letter-spacing: 0;
+    line-height: 27px;
+    font-size: 18px;
+  }
+}
+
+form {
+  @include media-breakpoint-up(md) {
+    margin-right: 154px;
+    width: 294px;
+  }
 }
 
 .feedback__input {
@@ -34,9 +108,22 @@
   background-color: #ffcd4e;
   border: none;
   border-bottom: 2px solid #000;
+
+  @include media-breakpoint-up(xs) {
+    width: 348px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    margin-top: 2px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    width: 294px;
+    display: block;
+  }
 }
 
 .feedback__btn {
+  display: block;
   margin-top: 34px;
   padding: 12px 43px;
 
@@ -48,6 +135,23 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 171.429% */
+
+  @include media-breakpoint-up(xs) {
+    padding: 14px 43px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 17px 43px;
+    font-size: 15px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    padding: 20px 43px;
+    margin-top: 27px;
+
+    font-size: 16px;
+    width: 294px;
+  }
 }
 
 .feedback__agree {
@@ -57,4 +161,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 15px */
+
+  @include media-breakpoint-up(tb) {
+    width: 258px;
+    margin-top: 21px;
+    font-size: 12px;
+    line-height: 150%; /* 18px */
+  }
 }

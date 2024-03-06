@@ -177,19 +177,19 @@
   background-color: #ffcd4e;
 
   @include media-breakpoint-up(xs) {
-    // padding: 64px 0;
+    padding: 66px 0 77.8px;
   }
 
   @include media-breakpoint-up(sm) {
-    // padding: 73px 0;
+    padding: 78px 0 96.6px;
   }
 
   @include media-breakpoint-up(tb) {
-    // padding: 82px 0;
+    padding: 90px 0 115.4px;
   }
 
   @include media-breakpoint-up(md) {
-    // padding: 91px 0;
+    padding: 102px 0 134.2px;
   }
 
   @include media-breakpoint-up(lg) {
