@@ -8,3 +8,10 @@
 <section>
   <app-presentation></app-presentation>
 </section>
+<section class="info">
+  <div class="container">
+    <ul>
+      <app-info *ngFor="let infoItem of infoData" [infoItem]="infoItem" class="info__item"></app-info>
+    </ul>
+  </div>
+</section>

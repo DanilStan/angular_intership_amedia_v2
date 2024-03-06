@@ -1,0 +1,82 @@
+import { Injectable } from '@angular/core'
+
+import { InfoData, NewsData } from '../interfaces/page'
+
+@Injectable({
+  providedIn: 'root',
+})
+export class DataService {
+  newsData: NewsData[] = [
+    {
+      number: '01',
+      title: 'Старт',
+      paragraphOne: 'Ліквідація ДАБІ',
+      paragraphTwo: 'Створення Сервісної служби',
+    },
+    {
+      number: '02',
+      title: 'Березень — Травень 2020',
+      paragraphOne: 'Перехідний період',
+      paragraphTwo: 'Мораторій на інспекційний дерконтроль',
+    },
+    {
+      number: '03',
+      title: 'Червень 2020',
+      paragraphOne: 'Створення ДІМ',
+      paragraphTwo: 'Запуск нового реєстру',
+    },
+    {
+      number: '04',
+      title: 'Вересень 2020',
+      paragraphOne: 'Державне агентство з питань технічного регулювання у містобудуванні',
+    },
+    {
+      number: '05',
+      title: 'Січень 2021',
+      paragraphOne: 'Запровадження страхування',
+    },
+  ]
+
+  infoData: InfoData[] = [
+    {
+      id: 1,
+      img1x: '../assets/img/fist.png',
+      img2x: '../assets/img/fist2.png',
+      imgAlt: 'Image of human fist',
+      title: 'Зіткнулися з корупцією?',
+      text: 'Пишіть нам',
+      linkText: 'hello@thedigital.gov.ua',
+      link: 'mailto:hello@thedigital.gov.ua',
+    },
+    {
+      id: 2,
+      img1x: '../assets/img/message.png',
+      img2x: '../assets/img/message2.png',
+      imgAlt: 'Image message icon',
+      title: 'Напишіть у чат-бот',
+      text: 'Оберіть месенджер',
+      icon: {
+        iconLink: [
+          'https://www.viber.com/diia_help_bot',
+          'https://t.me/mincifra_bot',
+          'https://www.messenger.com/t/1285934254793174/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0',
+        ],
+        iconSvg: [
+          '../assets/img/icons/sprite.svg#icon-viber',
+          '../assets/img/icons/sprite.svg#icon-telegram',
+          '../assets/img/icons/sprite.svg#icon-facebook',
+        ],
+      },
+    },
+    {
+      id: 3,
+      img1x: '../assets/img/tel.png',
+      img2x: '../assets/img/tel2.png',
+      imgAlt: 'Image of telephone icon',
+      title: 'Зателефонуйте на гарячу лінію',
+      text: 'Працює з 09:00 до 18:00',
+      linkText: '+38 097 162 85 29',
+      link: 'tel:+38 097 162 85 29',
+    },
+  ]
+}

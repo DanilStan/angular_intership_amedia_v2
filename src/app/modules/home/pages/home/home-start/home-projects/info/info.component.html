@@ -1,0 +1,35 @@
+<li class="info__item">
+  <div class="info__element info__element--one">
+    <img class="info__img" srcset="{{infoItem.img1x}}, {{infoItem.img2x}} 2x" src="{{ infoItem.img1x }}" alt="{{ infoItem.imgAlt }}" />
+    <h3 class="info__title">{{ infoItem.title }}</h3>
+  </div>
+  <div class="info__element">
+    <p class="info__text">{{ infoItem.text }}</p>
+    <a *ngIf="infoItem.link" href="{{ infoItem.link }}" class="info__link">
+      {{ infoItem.linkText }}
+    </a>
+    <ul *ngIf="infoItem.icon" class="info__svg-list">
+      <li class="info__svg-item">
+        <a href="{{ infoItem.icon.iconLink[0] }}">
+          <svg class="info__svg">
+            <use [attr.xlink:href]="infoItem.icon.iconSvg[0]"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="info__svg-item">
+        <a href="{{ infoItem.icon.iconLink[1] }}">
+          <svg class="info__svg">
+            <use [attr.xlink:href]="infoItem.icon.iconSvg[1]"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="info__svg-item">
+        <a href="{{ infoItem.icon.iconLink[2] }}">
+          <svg class="info__svg">
+            <use [attr.xlink:href]="infoItem.icon.iconSvg[2]"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>

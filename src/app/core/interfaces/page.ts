@@ -23,3 +23,18 @@ export interface NewsData {
   paragraphThree?: string
   id?: number
 }
+
+export interface InfoData {
+  id?: number
+  img1x: string
+  img2x: string
+  imgAlt: string
+  title: string
+  text: string
+  linkText?: string
+  link?: string
+  icon?: {
+    iconLink: string[]
+    iconSvg: string[]
+  }
+}
