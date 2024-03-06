@@ -38,3 +38,10 @@ export interface InfoData {
     iconSvg: string[]
   }
 }
+
+export interface FooterIcon {
+  id?: number
+  img: string
+  link: string
+  imgAlt: string
+}

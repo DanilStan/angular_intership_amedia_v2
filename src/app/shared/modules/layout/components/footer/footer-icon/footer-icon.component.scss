@@ -1,0 +1,11 @@
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+a {
+  transition: all 0.15s linear;
+  @include media-breakpoint-up(tb) {
+    &:hover {
+      scale: 1.08;
+    }
+  }
+}

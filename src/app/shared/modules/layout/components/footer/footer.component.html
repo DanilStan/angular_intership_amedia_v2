@@ -1,1 +1,38 @@
-<footer></footer>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <img src="assets/img/icons/herb-footer-group.svg" alt="Кабінет Міністрів України" class="footer__herb-desktop" />
+      <div>
+        <ul class="footer__icon-list">
+          <app-footer-icon *ngFor="let icon of iconData" [iconItem]="icon" class="footer__icon-item"></app-footer-icon>
+        </ul>
+        <div class="footer__link-container">
+          <div>
+            <a class="footer__link" href="mailto:hello@thedigital.gov.ua">hello@thedigital.gov.ua</a>
+          </div>
+          <div>
+            <a class="footer__link footer__link--two" href="mailto:hi@thedigital.gov.ua">hi@thedigital.gov.ua</a>
+          </div>
+        </div>
+        <div class="footer__link-container-desktop">
+          <div>
+            <a class="footer__link footer__link" href="mailto:pr@thedigital.gov.ua">pr@thedigital.gov.ua</a>
+          </div>
+          <div>
+            <a class="footer__link footer__link--two" href="mailto:hello@thedigital.gov.ua">hello@thedigital.gov.ua</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="assets/img/icons/herb-footer-group.svg" alt="Кабінет Міністрів України" class="footer__herb-mobil" />
+    <div class="footer__copyright-mobile">
+      <p class="footer__copyright">
+        &copy; 2020 Весь контент доступний за ліцензією Creative Commons Attribution 4.0 International license, якщо не зазначено інше
+      </p>
+    </div>
+    <div class="footer__copyright-desktop">
+      <p class="footer__copyright">&copy; 2020 Весь контент доступний за ліцензією</p>
+      <p class="footer__copyright footer__copyright--two">Creative Commons Attribution 4.0 International license, якщо не зазначено інше</p>
+    </div>
+  </div>
+</footer>

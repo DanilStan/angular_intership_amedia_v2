@@ -1,0 +1,140 @@
+@import 'bootstrap/scss/mixins';
+@import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
+
+.footer {
+  padding: 64px 0 26px;
+  background-color: #000;
+
+  @include media-breakpoint-up(xs) {
+    padding: 59.4px 0 29.6px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 54.7px 0 33.2px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    padding: 50px 0 37px;
+  }
+}
+
+.footer__container {
+  @include media-breakpoint-up(tb) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.footer__icon-list {
+  display: flex;
+  justify-content: space-between;
+  width: 288px;
+
+  @include media-breakpoint-up(tb) {
+    width: 276px;
+  }
+}
+
+.footer__link {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-decoration-line: underline;
+  transition: all 0.15s linear;
+
+  @include media-breakpoint-up(tb) {
+    text-align: right;
+
+    &:hover {
+      color: #949494;
+    }
+  }
+  &--two {
+    margin-top: 18px;
+
+    @include media-breakpoint-up(tb) {
+      margin-top: 8px;
+    }
+  }
+}
+
+.footer__link-container {
+  margin: 45px 0;
+
+  @include media-breakpoint-up(xs) {
+    margin: 40px 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin: 35px 0;
+  }
+
+  @include media-breakpoint-up(tb) {
+    display: none;
+  }
+}
+
+.footer__link-container-desktop {
+  display: none;
+  @include media-breakpoint-up(tb) {
+    display: block;
+    margin: 12px 0 0 0;
+
+    div {
+      text-align: right;
+    }
+  }
+}
+
+.footer__copyright {
+  width: 297px;
+  margin-top: 26.42px;
+
+  color: #fff;
+  opacity: 0.5;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%; /* 15px */
+
+  &-desktop {
+    display: none;
+  }
+
+  @include media-breakpoint-up(tb) {
+    margin-top: 8px;
+    margin-bottom: 0;
+    width: 600px;
+    font-size: 12px;
+
+    &-mobile {
+      display: none;
+    }
+
+    &-desktop {
+      display: block;
+    }
+
+    &--two {
+      margin-top: 0;
+    }
+  }
+}
+
+.footer__herb-desktop {
+  display: none;
+
+  @include media-breakpoint-up(tb) {
+    display: block;
+  }
+}
+
+.footer__herb-mobil {
+  @include media-breakpoint-up(tb) {
+    display: none;
+  }
+}
