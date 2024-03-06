@@ -2,30 +2,43 @@
 @import 'src/assets/scss/theme-angular-starter1/bootstrap/variables';
 
 .header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  width: 288px;
+  align-items: center;
   padding-top: 25px;
 
   @include media-breakpoint-up(xs) {
+    width: 390.41px;
     padding-top: 29.4px;
   }
 
   @include media-breakpoint-up(sm) {
+    width: 620.81px;
     padding-top: 33.8px;
   }
 
   @include media-breakpoint-up(tb) {
+    width: 819.2px;
     padding-top: 38.2px;
+    align-items: stretch;
   }
 
   @include media-breakpoint-up(md) {
+    width: 1017.61px;
     padding-top: 42.6px;
   }
 
   @include media-breakpoint-up(lg) {
     padding-top: 44px;
-    align-items: start;
+    width: 1120px;
   }
 }
 
