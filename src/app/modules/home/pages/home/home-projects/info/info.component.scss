@@ -76,6 +76,14 @@
 .info__svg {
   width: 65px;
   height: 65px;
+  transition: all 0.15s linear;
+
+  @include media-breakpoint-up(tb) {
+    &:hover {
+      scale: 1.04;
+      // background-color: #949494;
+    }
+  }
 }
 
 .info__svg-item {
@@ -96,10 +104,16 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  opacity: 1;
+  transition: all 0.1s linear;
 
   @include media-breakpoint-up(tb) {
     font-size: 22px;
     margin-top: 20px;
+
+    &:hover {
+      color: #949494;
+    }
   }
 
   @include media-breakpoint-up(lg) {

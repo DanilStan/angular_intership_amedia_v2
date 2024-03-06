@@ -11,10 +11,11 @@ import { HomeProjectsComponent } from 'src/app/modules/home/pages/home/home-proj
 import { HomeComponent } from 'src/app/modules/home/pages/home/home.component'
 import { NewsComponent } from './pages/home/home-projects/news/news.component'
 import { PresentationComponent } from './pages/home/home-projects/presentation/presentation.component'
-import { InfoComponent } from './pages/home/home-projects/info/info.component'
+import { InfoComponent } from './pages/home/home-projects/info/info.component';
+import { FeedbackComponent } from './pages/home/home-projects/feedback/feedback.component'
 
 @NgModule({
-  declarations: [HomeComponent, HomeHeroComponent, HomeProjectsComponent, NewsComponent, PresentationComponent, InfoComponent],
+  declarations: [HomeComponent, HomeHeroComponent, HomeProjectsComponent, NewsComponent, PresentationComponent, InfoComponent, FeedbackComponent],
   imports: [CommonModule, HomeRoutingModule, CoreModule, LayoutModule],
 })
 export class HomeModule {}
