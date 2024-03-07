@@ -8,27 +8,7 @@
   background-size: cover;
   background-position: center top;
   width: 100%;
-  height: 179.56px;
-
-  @include media-breakpoint-up(xs) {
-    height: 305.3px;
-  }
-
-  @include media-breakpoint-up(sm) {
-    height: 431px;
-  }
-
-  @include media-breakpoint-up(tb) {
-    height: 556.7px;
-  }
-
-  @include media-breakpoint-up(md) {
-    height: 682.4px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: 808px;
-  }
+  aspect-ratio: 320/180;
 }
 
 .presentation__title {
@@ -150,28 +130,8 @@
 
 .presentation__video {
   width: 100%;
-  height: 179.56px;
+  aspect-ratio: 320/180;
   object-fit: fill;
-
-  @include media-breakpoint-up(xs) {
-    height: 305.3px;
-  }
-
-  @include media-breakpoint-up(sm) {
-    height: 431px;
-  }
-
-  @include media-breakpoint-up(tb) {
-    height: 556.7px;
-  }
-
-  @include media-breakpoint-up(md) {
-    height: 682.4px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: 808px;
-  }
 }
 
 .hidden {
