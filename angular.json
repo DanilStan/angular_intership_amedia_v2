@@ -35,20 +35,15 @@
               "src/site.webmanifest",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": [
-              "node_modules/hammerjs/hammer.min.js",
-              "node_modules/jquery/dist/jquery.min.js"
-            ],
+            "styles": ["src/styles.scss", "node_modules/aos/dist/aos.css"],
+            "scripts": ["node_modules/hammerjs/hammer.min.js", "node_modules/jquery/dist/jquery.min.js", "node_modules/aos/dist/aos.js"],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
             "namedChunks": true,
-            "allowedCommonJsDependencies": ["ngneat-transloco", "ngneat-transloco-locale", "flat"]
+            "allowedCommonJsDependencies": ["ngneat-transloco", "ngneat-transloco-locale", "flat", "aos"]
           },
           "configurations": {
             "production": {

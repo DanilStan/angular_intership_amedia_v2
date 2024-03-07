@@ -94,13 +94,11 @@ a {
   @include media-breakpoint-up(sm) {
     padding: 44.8px 36.4px 52.8px 36.4px;
     width: 480px;
-    // height: 313.8px;
   }
 
   @include media-breakpoint-up(tb) {
     padding: 47.2px 45.6px 59.2px 45.6px;
     width: 540px;
-    // height: auto;
   }
 
   @include media-breakpoint-up(md) {

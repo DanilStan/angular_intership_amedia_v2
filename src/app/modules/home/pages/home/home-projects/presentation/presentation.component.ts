@@ -1,12 +1,12 @@
-import { Page } from 'src/app/core/interfaces/page'
-import { Component, ElementRef, ViewChild } from '@angular/core'
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import * as Aos from 'aos'
 
 @Component({
   selector: 'app-presentation',
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.scss'],
 })
-export class PresentationComponent {
+export class PresentationComponent implements OnInit {
   videoVisible: boolean = false
 
   @ViewChild('videoPlayer') videoPlayer?: ElementRef
@@ -15,6 +15,9 @@ export class PresentationComponent {
     this.videoVisible = true
     const video: HTMLVideoElement = this.videoPlayer?.nativeElement
     video.play()
-    // console.dir(video)
+  }
+
+  ngOnInit(): void {
+    Aos.init()
   }
 }

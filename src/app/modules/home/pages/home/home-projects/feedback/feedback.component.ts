@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef, inject } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import * as Aos from 'aos'
 
 @Component({
   selector: 'app-feedback',
@@ -41,9 +42,9 @@ export class FeedbackComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Aos.init()
     this.form = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.required]),
     })
-    console.log(this.form.get('email'))
   }
 }
