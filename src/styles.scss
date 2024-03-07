@@ -68,3 +68,48 @@ a {
 .overflow {
   overflow: hidden;
 }
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  margin: 0 16px;
+
+  @include media-breakpoint-up(sm) {
+    margin: 0 auto;
+  }
+}
+
+.modal-content {
+  padding: 40px 18px;
+  border-radius: 0;
+  width: 288px;
+  height: 249px;
+
+  @include media-breakpoint-up(xs) {
+    padding: 42.4px 27.2px 46.4px 27.2px;
+    width: 380px;
+    height: auto;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 44.8px 36.4px 52.8px 36.4px;
+    width: 480px;
+    // height: 313.8px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    padding: 47.2px 45.6px 59.2px 45.6px;
+    width: 540px;
+    // height: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 49.6px 54.8px 65.6px 54.8px;
+    width: 590px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 52px 64px 72px 64px;
+    width: 664px;
+  }
+}

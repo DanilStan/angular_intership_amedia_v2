@@ -14,6 +14,7 @@ import { PresentationComponent } from './pages/home/home-projects/presentation/p
 import { InfoComponent } from './pages/home/home-projects/info/info.component'
 import { FeedbackComponent } from './pages/home/home-projects/feedback/feedback.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     InfoComponent,
     FeedbackComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, CoreModule, LayoutModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, HomeRoutingModule, CoreModule, LayoutModule, FormsModule, ReactiveFormsModule, NgbDatepickerModule],
 })
 export class HomeModule {}

@@ -215,3 +215,196 @@ form {
   line-height: 21px; /* 21px */
   letter-spacing: -0.28px;
 }
+
+.modal-title {
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 100% */
+  letter-spacing: -0.52px;
+
+  @include media-breakpoint-up(xs) {
+    font-size: 32px;
+    line-height: 32px; /* 100% */
+    letter-spacing: -0.64px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 38px;
+    line-height: 38px; /* 100% */
+    letter-spacing: -0.72px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    font-size: 44px;
+    line-height: 44px; /* 100% */
+    letter-spacing: -0.84px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 50px;
+    line-height: 50px; /* 100% */
+    letter-spacing: -0.96px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 56px;
+    line-height: 56px; /* 100% */
+    letter-spacing: -1.12px;
+  }
+}
+
+.modal-text {
+  margin-top: 20px;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 16.9px */
+  letter-spacing: -0.26px;
+
+  @include media-breakpoint-up(xs) {
+    margin-top: 24.6px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.29px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 29.2px;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.31px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    margin-top: 33.8px;
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: -0.34px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 38.4px;
+    font-size: 19px;
+    line-height: 29px;
+    letter-spacing: -0.37px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 43px;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.4px;
+  }
+}
+
+.modal-btn {
+  padding: 12px 82px;
+  margin-top: 31.7px;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 184.615% */
+  letter-spacing: -0.26px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 40px;
+  transition: all 0.15s linear;
+
+  @include media-breakpoint-up(xs) {
+    padding: 14px 82px;
+    margin-top: 38px;
+    font-size: 13px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 16px 82px;
+    margin-top: 44px;
+    font-size: 14px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    padding: 18px 82px;
+    margin-top: 50px;
+    font-size: 15px;
+    &:hover {
+      background-color: #494949;
+      scale: 1.04;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 19px 82px;
+    margin-top: 56px;
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 20px 82px;
+    margin-top: 60px;
+    font-size: 16px;
+  }
+}
+
+.btn-close {
+  position: absolute;
+  top: 17px;
+  right: 16px;
+  transition: all 0.15s linear;
+
+  @include media-breakpoint-up(xs) {
+    top: 24px;
+    right: 23.4px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    top: 31px;
+    right: 30.8px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @include media-breakpoint-up(tb) {
+    top: 38px;
+    right: 38.2px;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+
+    &:hover {
+      scale: 1.12;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    top: 45px;
+    right: 45.6px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: 52px;
+    right: 53px;
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
