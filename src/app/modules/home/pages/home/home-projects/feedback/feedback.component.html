@@ -3,9 +3,13 @@
     <h2 class="feedback__title">Щотижневі новини</h2>
     <p class="feedback__text">Підпишіться, щоб отримувати листи</p>
   </div>
-  <form>
-    <input type="email" class="feedback__input" placeholder="Ваш email" />
-    <button type="submit" class="feedback__btn">Підписатись</button>
+  <form autocomplete="on" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="email" class="feedback__input" placeholder="Ваш email" formControlName="email" />
+    <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="errors-container">
+      <p class="errors-text" *ngIf="form.get('email')?.errors?.required">Поле email не може бути пустим</p>
+      <p class="errors-text" *ngIf="form.get('email')?.errors?.email">Введіть коректний email</p>
+    </div>
+    <button type="submit" class="feedback__btn" [disabled]="form.invalid">Підписатись</button>
     <p class="feedback__agree">Даю згоду на обробку та використання персональних даних</p>
   </form>
 </div>

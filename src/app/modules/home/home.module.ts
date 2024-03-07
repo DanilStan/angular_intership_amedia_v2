@@ -11,11 +11,20 @@ import { HomeProjectsComponent } from 'src/app/modules/home/pages/home/home-proj
 import { HomeComponent } from 'src/app/modules/home/pages/home/home.component'
 import { NewsComponent } from './pages/home/home-projects/news/news.component'
 import { PresentationComponent } from './pages/home/home-projects/presentation/presentation.component'
-import { InfoComponent } from './pages/home/home-projects/info/info.component';
+import { InfoComponent } from './pages/home/home-projects/info/info.component'
 import { FeedbackComponent } from './pages/home/home-projects/feedback/feedback.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
-  declarations: [HomeComponent, HomeHeroComponent, HomeProjectsComponent, NewsComponent, PresentationComponent, InfoComponent, FeedbackComponent],
-  imports: [CommonModule, HomeRoutingModule, CoreModule, LayoutModule],
+  declarations: [
+    HomeComponent,
+    HomeHeroComponent,
+    HomeProjectsComponent,
+    NewsComponent,
+    PresentationComponent,
+    InfoComponent,
+    FeedbackComponent,
+  ],
+  imports: [CommonModule, HomeRoutingModule, CoreModule, LayoutModule, FormsModule, ReactiveFormsModule],
 })
 export class HomeModule {}

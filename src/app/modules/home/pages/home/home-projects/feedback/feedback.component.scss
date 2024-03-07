@@ -108,6 +108,21 @@ form {
   background-color: #ffcd4e;
   border: none;
   border-bottom: 2px solid #000;
+  transition: all 0.25s linear;
+
+  &::placeholder {
+    transition: all 0.25s linear;
+  }
+
+  &:focus.ng-invalid,
+  &.ng-invalid.ng-touched {
+    border-bottom: 2px solid #ff1744;
+  }
+
+  &:focus.ng-valid,
+  &.ng-valid.ng-touched {
+    border-bottom: 2px solid #64dd17;
+  }
 
   @include media-breakpoint-up(xs) {
     width: 348px;
@@ -119,6 +134,15 @@ form {
     font-size: 18px;
     width: 294px;
     display: block;
+
+    &:hover,
+    &:focus {
+      scale: 1.02;
+
+      &::placeholder {
+        color: #000;
+      }
+    }
   }
 }
 
@@ -135,6 +159,7 @@ form {
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 171.429% */
+  transition: all 0.15s linear;
 
   @include media-breakpoint-up(xs) {
     padding: 14px 43px;
@@ -151,6 +176,12 @@ form {
 
     font-size: 16px;
     width: 294px;
+
+    &:valid:hover {
+      background-color: #494949;
+      scale: 1.04;
+      border-color: #fff;
+    }
   }
 }
 
@@ -168,4 +199,19 @@ form {
     font-size: 12px;
     line-height: 150%; /* 18px */
   }
+}
+
+.errors-container {
+  position: relative;
+}
+
+.errors-text {
+  position: absolute;
+  top: 0;
+  color: #ff1744;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 21px */
+  letter-spacing: -0.28px;
 }
