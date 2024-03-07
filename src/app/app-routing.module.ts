@@ -25,6 +25,7 @@ routes.push({ path: '**', redirectTo: '/error/404' })
     RouterModule.forRoot(routes, {
       paramsInheritanceStrategy: 'always',
       scrollPositionRestoration: 'top',
+      anchorScrolling: 'enabled',
     }),
   ],
   exports: [RouterModule],

@@ -6,6 +6,7 @@ a {
   @include media-breakpoint-up(tb) {
     &:hover {
       scale: 1.08;
+      filter: drop-shadow(4px 4px 1px #5b5aff);
     }
   }
 }

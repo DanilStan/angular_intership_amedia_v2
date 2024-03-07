@@ -1,6 +1,10 @@
 @import 'src/assets/scss/theme-angular-starter1/fonts';
 @import 'src/assets/scss/theme-angular-starter1';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
 }
