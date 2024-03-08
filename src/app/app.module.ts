@@ -3,7 +3,7 @@ import { RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha'
 import { registerLocaleData } from '@angular/common'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import localeUk from '@angular/common/locales/uk'
-import { APP_ID, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 

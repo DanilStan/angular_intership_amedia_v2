@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
 import * as Aos from 'aos'
+
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-header',

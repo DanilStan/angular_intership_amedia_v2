@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
-import { FooterIcon } from 'src/app/core/interfaces/page'
+
+import { FooterIcon } from 'src/app/core/services/data.service'
 
 @Component({
   selector: 'app-footer-icon',

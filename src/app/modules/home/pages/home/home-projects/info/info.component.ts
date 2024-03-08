@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { InfoData } from 'src/app/core/interfaces/page'
 import * as Aos from 'aos'
+
+import { Component, Input, OnInit } from '@angular/core'
+
+import { InfoData } from 'src/app/core/services/data.service'
 
 @Component({
   selector: 'app-info',

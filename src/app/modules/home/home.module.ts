@@ -1,5 +1,13 @@
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap'
+
+import { FeedbackComponent } from './pages/home/home-projects/feedback/feedback.component'
+import { InfoComponent } from './pages/home/home-projects/info/info.component'
+import { NewsComponent } from './pages/home/home-projects/news/news.component'
+import { PresentationComponent } from './pages/home/home-projects/presentation/presentation.component'
+
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { CoreModule } from 'src/app/core/core.module'
 
@@ -9,12 +17,6 @@ import { HomeRoutingModule } from 'src/app/modules/home/home-routing.module'
 import { HomeHeroComponent } from 'src/app/modules/home/pages/home/home-hero/home-hero.component'
 import { HomeProjectsComponent } from 'src/app/modules/home/pages/home/home-projects/home-projects.component'
 import { HomeComponent } from 'src/app/modules/home/pages/home/home.component'
-import { NewsComponent } from './pages/home/home-projects/news/news.component'
-import { PresentationComponent } from './pages/home/home-projects/presentation/presentation.component'
-import { InfoComponent } from './pages/home/home-projects/info/info.component'
-import { FeedbackComponent } from './pages/home/home-projects/feedback/feedback.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [

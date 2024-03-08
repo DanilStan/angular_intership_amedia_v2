@@ -1,7 +1,7 @@
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap'
+
 import { Component, OnInit, TemplateRef, inject } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap'
-import * as Aos from 'aos'
 
 @Component({
   selector: 'app-feedback',
@@ -19,18 +19,23 @@ export class FeedbackComponent implements OnInit {
     }
   }
 
-  open(content: TemplateRef<any>) {
-    this.modalService.open(content, { centered: true }).result.then(
-      (result) => {
-        this.closeResult = `Closed with: ${result}`
-      },
-      (reason) => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
-      },
-    )
+  open(content: TemplateRef<Element>): void {
+    this.modalService
+      .open(content, { centered: true })
+      .result.then(
+        (result) => {
+          return (this.closeResult = `Closed with: ${result}`)
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
+        },
+      )
+      .catch((error) => {
+        throw new Error(error)
+      })
   }
 
-  private getDismissReason(reason: any): string {
+  private getDismissReason(reason: number): string {
     switch (reason) {
       case ModalDismissReasons.ESC:
         return 'by pressing ESC'
@@ -42,7 +47,6 @@ export class FeedbackComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Aos.init()
     this.form = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.required]),
     })

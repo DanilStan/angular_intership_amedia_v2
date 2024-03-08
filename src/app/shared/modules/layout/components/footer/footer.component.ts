@@ -1,6 +1,6 @@
-import { DataService } from 'src/app/core/services/data.service'
 import { Component, OnInit } from '@angular/core'
-import { FooterIcon } from 'src/app/core/interfaces/page'
+
+import { DataService, FooterIcon } from 'src/app/core/services/data.service'
 
 @Component({
   selector: 'app-footer',
@@ -10,9 +10,9 @@ import { FooterIcon } from 'src/app/core/interfaces/page'
 export class FooterComponent implements OnInit {
   iconData!: FooterIcon[]
 
-  constructor(private DataService: DataService) {}
+  constructor(private DataServiceIcon: DataService) {}
 
   ngOnInit(): void {
-    this.iconData = this.DataService.footerIconData
+    this.iconData = this.DataServiceIcon.footerIconData
   }
 }
