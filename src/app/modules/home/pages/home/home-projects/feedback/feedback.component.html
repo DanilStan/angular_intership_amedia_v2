@@ -36,16 +36,15 @@
     <p class="feedback__text">Підпишіться, щоб отримувати листи</p>
   </div>
   <form [formGroup]="formGroup" (ngSubmit)="submit()">
-    <input type="email" class="feedback__input" placeholder="Ваш email" autocomplete="email" formControlName="email" />
+    <input matInput type="email" class="feedback__input" placeholder="Ваш email" autocomplete="email" formControlName="email" />
     <div *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched" class="errors-container">
       <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.required">Поле email не може бути пустим</p>
-      <!-- <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.email">Введіть коректний email</p> -->
-      <div class="has-text-danger" *ngIf="formGroup.controls['email'].errors?.usernameExists">
-        <p>This username is already taken!</p>
-      </div>
+      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.email && formGroup.get('email')?.errors?.emailValid">
+        Введіть коректний email
+      </p>
+      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.usernameAlreadyExists">Такий користувач вже підписаний</p>
     </div>
-
-    <button type="submit" class="feedback__btn" [disabled]="formGroup.invalid" (click)="open(content)">
+    <button type="submit" class="feedback__btn" [disabled]="formGroup.invalid">
       Підписатись
       <div *ngIf="isPending" class="loader"></div>
     </button>

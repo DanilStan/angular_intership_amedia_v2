@@ -59,18 +59,18 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   submitPrepare(): void {
     this.isSubmit = true
     this.formGroup.setErrors(null)
-    Object.keys(this.formGroup.getRawValue()).forEach((field) => {
-      this.formGroup.get(field)?.updateValueAndValidity({ emitEvent: this.isEmitOnPrepare })
-    })
     this.formGroup.markAllAsTouched()
   }
 
   submit(): void {
     this.submitPrepare()
     if (this.formGroup.valid) {
+      console.log('valid form')
       this.isPending = true
       this.send()
     } else {
+      console.log(this.formGroup, this.formGroup.valid)
+      console.log('invalid')
       this.scrollToError()
     }
   }
@@ -90,6 +90,7 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   }
 
   onRequestSuccess(value: unknown): void {
+    console.log('OnRequestSuccess')
     this.sentSuccess.emit(value)
     this.isSubmit = false
     this.isSuccess = true
@@ -120,9 +121,6 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
 
     this.isPending = false
     this.isSent = false
-    if (this.formGroup.invalid) {
-      this.scrollToError()
-    }
 
     this.requestSubscription.unsubscribe()
     this.sent.emit()
@@ -178,6 +176,7 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       const invalidInput = this.elementRef.nativeElement.querySelector('.form-error > p')
       if (invalidInput) {
+        console.log('WE are here')
         invalidInput.scrollIntoView({
           block: 'center',
           behavior: 'smooth',

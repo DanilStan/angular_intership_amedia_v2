@@ -7,20 +7,23 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 import { BaseFormComponent } from 'src/app/core/abstracts/base-form.component'
 import { FeedbackData } from 'src/app/core/interfaces/page'
-import { UsernameValidationService } from 'src/app/core/services/username.service'
+import { feedbackEmailService } from 'src/app/core/services/feedback-email.service'
+import { feedbackEmailValidator } from './feedback-validator'
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.scss'],
 })
-export class FeedbackComponent extends BaseFormComponent {
-  // formGroup: FormGroup = new FormGroup({
-  //   email: new FormControl('', [Validators.email, Validators.required, this.usernameService.usernameValidator()]),
-  // })
+export class FeedbackComponent extends BaseFormComponent implements OnInit {
+  @ViewChild('content') content!: TemplateRef<any>
 
-  formGroup: FormGroup = this.formBuilder.group({
-    email: ['', [Validators.email, Validators.required], [this.usernameService.usernameValidator()]],
+  override formGroup: FormGroup = this.formBuilder.group({
+    email: [
+      null,
+      [Validators.required, Validators.email, feedbackEmailValidator.email],
+      [feedbackEmailValidator.checkEmailOnServer(this.feedbackEmailService)],
+    ],
   })
   closeResult = ''
   override isResetIsSuccess = false
@@ -30,31 +33,33 @@ export class FeedbackComponent extends BaseFormComponent {
     private http: HttpClient,
     protected formBuilder: FormBuilder,
     protected elementRef: ElementRef,
-    private usernameService: UsernameValidationService,
+    private feedbackEmailService: feedbackEmailService,
   ) {
     super()
   }
 
+  override ngOnInit(): void {
+    this.sentSuccess.subscribe(() => this.open(this.content))
+  }
+
   prepareRequest(): Observable<FeedbackData> {
-    return this.http.post<FeedbackData>('https://rm-united24-rebuild-api-public.demo.ukrohost.com/appeal/create', this.formGroup.value)
+    return this.feedbackEmailService.sendEmail(this.formGroup.value)
   }
 
   open(content: TemplateRef<Element>): void {
-    if (this.isSuccess) {
-      this.modalService
-        .open(content, { centered: true })
-        .result.then(
-          (result) => {
-            return (this.closeResult = `Closed with: ${result}`)
-          },
-          (reason) => {
-            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
-          },
-        )
-        .catch((error) => {
-          throw new Error(error)
-        })
-    }
+    this.modalService
+      .open(content, { centered: true })
+      .result.then(
+        (result) => {
+          return (this.closeResult = `Closed with: ${result}`)
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
+        },
+      )
+      .catch((error) => {
+        throw new Error(error)
+      })
   }
 
   private getDismissReason(reason: number): string {
