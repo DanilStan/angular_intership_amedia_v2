@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { FeedbackData } from '../interfaces/page'
-
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
+
+import { FeedbackData } from 'src/app/core/interfaces/page'
 
 interface ResponseCheckEmail {
   data: {
@@ -15,9 +15,7 @@ interface ResponseCheckEmail {
 @Injectable({
   providedIn: 'root',
 })
-export class feedbackEmailService {
-  // private existingUsernames = ['stanislavov@gmail.com', 'Superman', 'Joker', 'Luthor']
-
+export class FeedbackEmailService {
   constructor(private http: HttpClient) {}
   checkIfUsernameExists(value: string): Observable<boolean> {
     return this.http

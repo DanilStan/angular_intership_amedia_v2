@@ -69,18 +69,14 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   submit(): void {
     this.submitPrepare()
     if (this.formGroup.valid) {
-      console.log('valid form')
       this.isPending = true
       this.send()
     } else {
-      console.log(this.formGroup, this.formGroup.valid)
-      console.log('invalid')
       this.scrollToError()
     }
   }
 
   send(): void {
-    console.log('Send function')
     if (this.isSent) {
       return
     }
@@ -94,7 +90,6 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   }
 
   onRequestSuccess(value: unknown): void {
-    console.log('OnRequestSuccess')
     this.sentSuccess.emit(value)
     this.isSubmit = false
     this.isSuccess = true
@@ -110,7 +105,6 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   }
 
   onRequestFailed(errorResponse: HttpErrorResponse): void {
-    console.log('OnRequestFailed')
     if (!environment.production) {
       // eslint-disable-next-line no-console
       console.log(errorResponse)
@@ -128,8 +122,6 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   }
 
   onRequestFinal(): void {
-    console.log('OnRequestFinal')
-
     this.isPending = false
     this.isSent = false
 
@@ -187,7 +179,6 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       const invalidInput = this.elementRef.nativeElement.querySelector('.form-error > p')
       if (invalidInput) {
-        console.log('WE are here')
         invalidInput.scrollIntoView({
           block: 'center',
           behavior: 'smooth',

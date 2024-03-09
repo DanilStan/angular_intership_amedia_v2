@@ -1,15 +1,15 @@
 import { Observable } from 'rxjs'
 import { debounceTime, map } from 'rxjs/operators'
 
-import { AbstractControl, AsyncValidatorFn } from '@angular/forms'
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms'
 
-import { feedbackEmailService } from 'src/app/core/services/feedback-email.service'
+import { FeedbackEmailService } from 'src/app/core/services/feedback-email.service'
 
-export const isEmptyInputValue = (value: []): boolean => value == null || value === undefined || value?.length === 0
+export const isEmptyInputValue = (value: []): boolean => value === null || value === undefined || value?.length === 0
 
-export class feedbackEmailValidator {
-  static checkEmailOnServer(service: feedbackEmailService): AsyncValidatorFn {
-    return (control: AbstractControl): Observable<any> => {
+export class FeedbackEmailValidator {
+  static checkEmailOnServer(service: FeedbackEmailService): AsyncValidatorFn {
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
       return service.checkIfUsernameExists(control.value).pipe(
         debounceTime(500),
         map((result) => (!result ? { usernameAlreadyExists: true } : null)),

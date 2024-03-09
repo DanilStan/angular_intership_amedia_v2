@@ -1,52 +1,51 @@
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { Observable } from 'rxjs'
 
-import { feedbackEmailValidator } from './feedback-validator'
+import { FeedbackEmailValidator } from './feedback-validator'
 
-import { HttpClient } from '@angular/common/http'
+import { animate, style, transition, trigger } from '@angular/animations'
 import { Component, ElementRef, OnInit, TemplateRef, ViewChild, inject } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 import { BaseFormComponent } from 'src/app/core/abstracts/base-form.component'
 import { FeedbackData } from 'src/app/core/interfaces/page'
-import { feedbackEmailService } from 'src/app/core/services/feedback-email.service'
-import { animate, style, transition, trigger } from '@angular/animations'
+import { FeedbackEmailService } from 'src/app/core/services/feedback-email.service'
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.scss'],
   animations: [
-    trigger('onOff', [
+    trigger('fadeIn', [
       transition(':enter', [
         style({
           opacity: 0,
         }),
-        animate(400),
+        animate(
+          '0.3s ease-in',
+          style({
+            opacity: 1,
+          }),
+        ),
       ]),
     ]),
   ],
 })
 export class FeedbackComponent extends BaseFormComponent implements OnInit {
-  @ViewChild('content') content!: TemplateRef<any>
-  @ViewChild('contentFail') contentFail!: TemplateRef<any>
+  @ViewChild('content') content!: TemplateRef<HTMLDivElement>
+  @ViewChild('contentFail') contentFail!: TemplateRef<HTMLDivElement>
 
   override formGroup: FormGroup = this.formBuilder.group({
     email: [
       null,
-      [Validators.required, Validators.email, feedbackEmailValidator.email],
-      [feedbackEmailValidator.checkEmailOnServer(this.feedbackEmailService)],
+      [Validators.required, Validators.email, FeedbackEmailValidator.email],
+      [FeedbackEmailValidator.checkEmailOnServer(this.feedbackEmailService)],
     ],
   })
   closeResult = ''
   private modalService = inject(NgbModal)
 
-  constructor(
-    private http: HttpClient,
-    protected formBuilder: FormBuilder,
-    protected elementRef: ElementRef,
-    private feedbackEmailService: feedbackEmailService,
-  ) {
+  constructor(protected formBuilder: FormBuilder, protected elementRef: ElementRef, private feedbackEmailService: FeedbackEmailService) {
     super()
   }
 
