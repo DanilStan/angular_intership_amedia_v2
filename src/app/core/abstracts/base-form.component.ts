@@ -30,11 +30,15 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
 
   isSuccess = false
 
+  isFail = false
+
   defaultValues: unknown = {}
 
   isResetOnSuccess = true
 
   isResetIsSuccess = true
+
+  isResetIsFail = true
 
   isEmitOnPrepare = true
 
@@ -101,7 +105,7 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
     if (this.isResetIsSuccess) {
       setTimeout(() => {
         this.isSuccess = false
-      }, 3000)
+      }, 5000)
     }
   }
 
@@ -112,9 +116,15 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
       console.log(errorResponse)
     }
 
+    this.isFail = true
     this.setFormErrors(errorResponse)
     this.sentFailed.emit(this.formGroup.errors)
-    this.formGroup.reset(this.defaultValues, { emitEvent: false })
+
+    if (this.isResetIsFail) {
+      setTimeout(() => {
+        this.isFail = false
+      }, 3000)
+    }
   }
 
   onRequestFinal(): void {

@@ -163,6 +163,10 @@ form {
   line-height: 24px; /* 171.429% */
   transition: all 0.15s linear;
 
+  &:disabled {
+    cursor: auto;
+  }
+
   @include media-breakpoint-up(xs) {
     padding: 14px 43px;
   }
@@ -428,4 +432,8 @@ form {
   to {
     transform: rotate(1turn);
   }
+}
+
+.loader-notification {
+  margin-left: 20px;
 }

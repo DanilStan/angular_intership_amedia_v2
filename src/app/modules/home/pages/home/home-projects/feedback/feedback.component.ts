@@ -10,11 +10,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { BaseFormComponent } from 'src/app/core/abstracts/base-form.component'
 import { FeedbackData } from 'src/app/core/interfaces/page'
 import { feedbackEmailService } from 'src/app/core/services/feedback-email.service'
+import { animate, style, transition, trigger } from '@angular/animations'
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.scss'],
+  animations: [
+    trigger('onOff', [
+      transition(':enter', [
+        style({
+          opacity: 0,
+        }),
+        animate(400),
+      ]),
+    ]),
+  ],
 })
 export class FeedbackComponent extends BaseFormComponent implements OnInit {
   @ViewChild('content') content!: TemplateRef<any>
@@ -28,7 +39,6 @@ export class FeedbackComponent extends BaseFormComponent implements OnInit {
     ],
   })
   closeResult = ''
-  override isResetIsSuccess = false
   private modalService = inject(NgbModal)
 
   constructor(
@@ -42,7 +52,9 @@ export class FeedbackComponent extends BaseFormComponent implements OnInit {
 
   override ngOnInit(): void {
     this.sentSuccess.subscribe(() => this.open(this.content))
-    this.sentFailed.subscribe(() => this.open(this.contentFail))
+    this.sentFailed.subscribe(() => {
+      this.open(this.contentFail)
+    })
   }
 
   prepareRequest(): Observable<FeedbackData> {

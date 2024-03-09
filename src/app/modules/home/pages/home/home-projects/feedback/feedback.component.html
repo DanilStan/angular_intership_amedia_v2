@@ -38,15 +38,20 @@
   <form [formGroup]="formGroup" (ngSubmit)="submit()">
     <input matInput type="email" class="feedback__input" placeholder="Ваш email" autocomplete="email" formControlName="email" />
     <div *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched" class="errors-container">
-      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.required">Поле email не може бути пустим</p>
-      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.email && formGroup.get('email')?.errors?.emailValid">
+      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.required" @onOff>Поле email не може бути пустим</p>
+      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.email && formGroup.get('email')?.errors?.emailValid" @onOff>
         Введіть коректний email
       </p>
-      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.usernameAlreadyExists">Такий користувач вже підписаний</p>
+      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.emailValid && formGroup.get('email')?.errors?.emailValid" @onOff>
+        Введіть коректний email
+      </p>
+      <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.usernameAlreadyExists" @onOff>Такий користувач вже підписаний</p>
     </div>
     <button type="submit" class="feedback__btn" [disabled]="formGroup.invalid || isPending">
       <p>Підписатись</p>
       <span *ngIf="isPending" class="loader"></span>
+      <img *ngIf="isSuccess" src="assets/img/icons/icon-success.svg" class="loader-notification" alt="Loader success icon" @onOff />
+      <img *ngIf="isFail" src="assets/img/icons/icon-error.svg" class="loader-notification" alt="Loader error icon" />
     </button>
     <p class="feedback__agree">Даю згоду на обробку та використання персональних даних</p>
   </form>
@@ -67,7 +72,7 @@
 
 <ng-template #contentFail let-modal>
   <div>
-    <h4 class="modal-title" id="modal-basic-title">Увага</h4>
+    <h4 class="modal-title" id="modal-basic-title">Кепські справи</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <img src="assets/img/icons/ic_close.svg" alt="Icon close modal" />
     </button>
