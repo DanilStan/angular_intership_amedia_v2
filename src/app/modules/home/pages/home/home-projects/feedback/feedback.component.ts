@@ -1,14 +1,15 @@
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { Observable } from 'rxjs'
 
+import { feedbackEmailValidator } from './feedback-validator'
+
 import { HttpClient } from '@angular/common/http'
 import { Component, ElementRef, OnInit, TemplateRef, ViewChild, inject } from '@angular/core'
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 import { BaseFormComponent } from 'src/app/core/abstracts/base-form.component'
 import { FeedbackData } from 'src/app/core/interfaces/page'
 import { feedbackEmailService } from 'src/app/core/services/feedback-email.service'
-import { feedbackEmailValidator } from './feedback-validator'
 
 @Component({
   selector: 'app-feedback',
@@ -17,6 +18,7 @@ import { feedbackEmailValidator } from './feedback-validator'
 })
 export class FeedbackComponent extends BaseFormComponent implements OnInit {
   @ViewChild('content') content!: TemplateRef<any>
+  @ViewChild('contentFail') contentFail!: TemplateRef<any>
 
   override formGroup: FormGroup = this.formBuilder.group({
     email: [
@@ -40,6 +42,7 @@ export class FeedbackComponent extends BaseFormComponent implements OnInit {
 
   override ngOnInit(): void {
     this.sentSuccess.subscribe(() => this.open(this.content))
+    this.sentFailed.subscribe(() => this.open(this.contentFail))
   }
 
   prepareRequest(): Observable<FeedbackData> {

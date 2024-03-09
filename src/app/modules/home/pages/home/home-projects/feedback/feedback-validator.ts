@@ -1,6 +1,8 @@
-import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms'
 import { Observable } from 'rxjs'
-import { debounceTime, map, tap } from 'rxjs/operators'
+import { debounceTime, map } from 'rxjs/operators'
+
+import { AbstractControl, AsyncValidatorFn } from '@angular/forms'
+
 import { feedbackEmailService } from 'src/app/core/services/feedback-email.service'
 
 export const isEmptyInputValue = (value: []): boolean => value == null || value === undefined || value?.length === 0
@@ -19,9 +21,11 @@ export class feedbackEmailValidator {
     if (isEmptyInputValue(control.value)) {
       return null
     }
+
     const regex = /^[^@\s]+@[^@\s]+\.\S{2,}$/
 
     const v: string = control.value
+
     return regex.test(v) ? null : { emailValid: true }
   }
 }

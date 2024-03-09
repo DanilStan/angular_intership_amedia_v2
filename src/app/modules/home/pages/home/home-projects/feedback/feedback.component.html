@@ -44,22 +44,35 @@
       </p>
       <p class="errors-text" *ngIf="formGroup.get('email')?.errors?.usernameAlreadyExists">Такий користувач вже підписаний</p>
     </div>
-    <button type="submit" class="feedback__btn" [disabled]="formGroup.invalid">
-      Підписатись
-      <div *ngIf="isPending" class="loader"></div>
+    <button type="submit" class="feedback__btn" [disabled]="formGroup.invalid || isPending">
+      <p>Підписатись</p>
+      <span *ngIf="isPending" class="loader"></span>
     </button>
     <p class="feedback__agree">Даю згоду на обробку та використання персональних даних</p>
   </form>
 </div>
 
 <ng-template #content let-modal>
-  <div class="">
+  <div>
     <h4 class="modal-title" id="modal-basic-title">Дякуємо</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <img src="assets/img/icons/ic_close.svg" alt="Icon close modal" />
     </button>
   </div>
   <p class="modal-text">Ми відправили лист на вашу пошту. Будь ласка, підтвердіть підписку.</p>
+  <div class="">
+    <button type="button" class="modal-btn" (click)="modal.close('Save click')">Ок</button>
+  </div>
+</ng-template>
+
+<ng-template #contentFail let-modal>
+  <div>
+    <h4 class="modal-title" id="modal-basic-title">Увага</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <img src="assets/img/icons/ic_close.svg" alt="Icon close modal" />
+    </button>
+  </div>
+  <p class="modal-text">Схоже що сталась помилка, спобуйте пізніше</p>
   <div class="">
     <button type="button" class="modal-btn" (click)="modal.close('Save click')">Ок</button>
   </div>
