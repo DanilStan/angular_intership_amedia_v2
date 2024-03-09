@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
-import { DataService, FooterIcon } from 'src/app/core/services/data.service'
+import { FooterIcon } from 'src/app/core/interfaces/page'
+import { DataService } from 'src/app/core/services/data.service'
 
 @Component({
   selector: 'app-footer',

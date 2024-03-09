@@ -6,6 +6,7 @@ import { NewsComponent } from './pages/home/home-projects/news/news.component'
 import { PresentationComponent } from './pages/home/home-projects/presentation/presentation.component'
 
 import { CommonModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
@@ -28,6 +29,15 @@ import { HomeComponent } from 'src/app/modules/home/pages/home/home.component'
     InfoComponent,
     FeedbackComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, CoreModule, LayoutModule, FormsModule, ReactiveFormsModule, NgbDatepickerModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    CoreModule,
+    LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbDatepickerModule,
+    HttpClientModule,
+  ],
 })
 export class HomeModule {}

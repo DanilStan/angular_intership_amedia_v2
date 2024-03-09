@@ -76,6 +76,7 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   }
 
   send(): void {
+    console.log('Send function')
     if (this.isSent) {
       return
     }
@@ -104,6 +105,7 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   }
 
   onRequestFailed(errorResponse: HttpErrorResponse): void {
+    console.log('OnRequestFailed')
     if (!environment.production) {
       // eslint-disable-next-line no-console
       console.log(errorResponse)
@@ -114,6 +116,8 @@ export abstract class BaseFormComponent implements OnInit, OnDestroy {
   }
 
   onRequestFinal(): void {
+    console.log('OnRequestFinal')
+
     this.isPending = false
     this.isSent = false
     if (this.formGroup.invalid) {

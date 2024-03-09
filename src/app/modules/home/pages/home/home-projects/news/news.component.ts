@@ -2,7 +2,7 @@ import * as Aos from 'aos'
 
 import { Component, Input, OnInit } from '@angular/core'
 
-import { NewsData } from 'src/app/core/services/data.service'
+import { NewsData } from 'src/app/core/interfaces/page'
 
 @Component({
   selector: 'app-news',

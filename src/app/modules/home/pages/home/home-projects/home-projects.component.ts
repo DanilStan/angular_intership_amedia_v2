@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
-import { DataService, InfoData, NewsData } from 'src/app/core/services/data.service'
+import { InfoData, NewsData } from 'src/app/core/interfaces/page'
+import { DataService } from 'src/app/core/services/data.service'
 
 @Component({
   selector: 'app-home-projects',
