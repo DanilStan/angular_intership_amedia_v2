@@ -133,13 +133,8 @@
     transition: all 0.2s linear;
 
     &:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: #949494;
       scale: 1.05;
-
-      .header__btn--svg {
-        fill: #fff;
-      }
     }
   }
 
@@ -181,6 +176,24 @@
 .header__logo {
   display: flex;
   min-width: 120px;
+
+  @include media-breakpoint-up(xs) {
+    min-width: 130px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    min-width: 150px;
+  }
+
+  @include media-breakpoint-up(tb) {
+    margin-top: 2px;
+    width: 25.2px;
+    min-width: 180px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-width: 250px;
+  }
 }
 
 .header__logo-herb {

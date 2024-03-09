@@ -64,15 +64,17 @@
   border-radius: 48px;
   border: 2px solid #000;
 
+  &--svg {
+    margin-right: 10px;
+
+    width: 15px;
+    height: 15px;
+  }
+
   @include media-breakpoint-up(xs) {
     margin-top: 42px;
     padding: 11px 34px;
     font-size: 16px;
-
-    &--svg {
-      width: 15px;
-      height: 15px;
-    }
   }
 
   @include media-breakpoint-up(sm) {
@@ -82,8 +84,8 @@
     letter-spacing: -0.32px;
 
     &--svg {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
     }
   }
 
@@ -95,23 +97,14 @@
     &--svg {
       width: 17px;
       height: 17px;
-    }
-
-    &--svg {
-      width: 13.672px;
-      height: 19px;
       transition: all 0.2s linear;
     }
     transition: all 0.2s linear;
 
     &:hover {
-      background-color: #fff;
-      color: #000;
+      background-color: #949494;
       scale: 1.05;
-      border-color: #fff;
-      .hero__btn--svg {
-        fill: #000;
-      }
+      border-color: #000;
     }
   }
 
@@ -131,18 +124,6 @@
     padding: 14px 34px;
     font-size: 16px;
     letter-spacing: -0.32px;
-
-    &--svg {
-      width: 14px;
-      height: 14px;
-    }
-  }
-
-  &--svg {
-    fill: #fff;
-    margin-right: 11px;
-    width: 12px;
-    height: 12px;
   }
 }
 
