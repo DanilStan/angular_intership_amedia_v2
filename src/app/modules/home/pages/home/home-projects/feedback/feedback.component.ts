@@ -39,7 +39,7 @@ export class FeedbackComponent extends BaseFormComponent implements OnInit {
     email: [
       null,
       [Validators.required, Validators.email, FeedbackEmailValidator.email],
-      [FeedbackEmailValidator.checkEmailOnServer(this.feedbackEmailService)],
+      // [FeedbackEmailValidator.checkEmailOnServer(this.feedbackEmailService)],
     ],
   })
   closeResult = ''

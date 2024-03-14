@@ -19,13 +19,13 @@ export class FeedbackEmailService {
   constructor(private http: HttpClient) {}
   checkIfUsernameExists(value: string): Observable<boolean> {
     return this.http
-      .post<ResponseCheckEmail>('https://rm-united24-rebuild-api-public.demo.ukrohost.com/appeal/check-unique-email', {
+      .post<ResponseCheckEmail>('https://api/appeal/check-unique-email', {
         email: value,
       })
       .pipe(map((res) => res.data.success))
   }
 
   sendEmail(emailObject: FeedbackData): Observable<FeedbackData> {
-    return this.http.post<FeedbackData>('https://rm-united24-rebuild-api-public.demo.ukrohost.com/appeal/create', emailObject)
+    return this.http.post<FeedbackData>('https://api/appeal/create', emailObject)
   }
 }
