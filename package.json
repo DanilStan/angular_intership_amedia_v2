@@ -15,7 +15,7 @@
     "build:ssr": "ng build --configuration=${APP_ENV-production} && ng run angular-starter1:server:${APP_ENV-production}",
     "prerender": "ng run angular-starter1:prerender --configuration=${APP_ENV-production}"
   },
-  "private": true,
+  "private": false,
   "engines": {
     "node": ">=18.0.0 <21.0.0",
     "npm": ">=8.0.0 <10.0.0"
